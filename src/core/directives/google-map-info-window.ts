@@ -130,6 +130,7 @@ export class SebmGoogleMapInfoWindow implements OnDestroy, OnChanges, OnInit {
   }
 
   private _updateOpenState() {
+    console.log("THIS", this);
     this.isOpen ? this._infoWindowManager.open(this) : this._infoWindowManager.close(this);
   }
 
@@ -150,6 +151,7 @@ export class SebmGoogleMapInfoWindow implements OnDestroy, OnChanges, OnInit {
    * Closes the info window.
    */
   close(): Promise<void> {
+    console.log("YOOOOO");
     return this._infoWindowManager.close(this).then(() => { this.infoWindowClose.emit(void 0); });
   }
 
